@@ -22,8 +22,8 @@ namespace WindowsFormsApp1
         int id_filiere_etudiant;
         public int total_etudiant = 0;
         public int total_etudiant_par_filiere = 0;
-        public int stat_par_filiere;
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-2DIVA41\\SQL_PROJECT; Initial Catalog=student_management; User Id=sa; Password=hamza1999; Integrated Security =true");
+        public int stat_par_filiere; // Data Source=DESKTOP-2DIVA41\\SQL_PROJECT; Initial Catalog=student_management; User Id=sa; Password=hamza1999; Integrated Security =true
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-MUMHPSL\\SQLEXPRESS;Initial Catalog=student_management;Integrated Security=True");
         public Form1()
         {
             InitializeComponent();
@@ -420,8 +420,8 @@ namespace WindowsFormsApp1
 
         public void Insert(List<etudiant> list)
         {
-            DapperPlusManager.Entity<etudiant>().Table("etudiant");
-            using (IDbConnection db = new SqlConnection("Data Source=DESKTOP-2DIVA41\\SQL_PROJECT; Initial Catalog=student_management; User Id=sa; Password=hamza1999; Integrated Security =true"))
+            DapperPlusManager.Entity<etudiant>().Table("etudiant"); 
+            using (IDbConnection db = new SqlConnection("Data Source=DESKTOP-MUMHPSL\\SQLEXPRESS;Initial Catalog=student_management;Integrated Security=True"))
             {
                 db.BulkInsert(list);
             }
@@ -443,7 +443,7 @@ namespace WindowsFormsApp1
                     obj.date_naiss = dt.Rows[i]["date_naiss"].ToString();
                     obj.adresse = dt.Rows[i]["adresse"].ToString();
                     obj.teleph = Convert.ToInt32(dt.Rows[i]["teleph"]);
-                    obj.filieres = obj.prenom = dt.Rows[i]["filieres"].ToString();
+                    obj.filieres = dt.Rows[i]["filieres"].ToString();
                     
                     list.Add(obj);
                 }
@@ -454,6 +454,16 @@ namespace WindowsFormsApp1
         private void import_data_Click(object sender, EventArgs e)
         {
             panel2.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 }
