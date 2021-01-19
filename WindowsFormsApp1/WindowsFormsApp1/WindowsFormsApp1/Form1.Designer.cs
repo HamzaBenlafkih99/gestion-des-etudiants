@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statistic = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,6 +39,7 @@
             this.nom_filiere = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textfiliere_mod = new System.Windows.Forms.TextBox();
             this.valid_filiere = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.mod_filiere = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.cboSheet = new System.Windows.Forms.ComboBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.txtFilename = new System.Windows.Forms.TextBox();
@@ -81,15 +83,14 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.etudiant_stat = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.AfficherTous = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.AfficherCne = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.CneTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.AfficherCne = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.AfficherTous = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.statistic.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,8 +104,8 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.etudiant_stat)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // statistic
@@ -194,6 +195,17 @@
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(186, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -275,6 +287,17 @@
             this.panel2.Size = new System.Drawing.Size(294, 291);
             this.panel2.TabIndex = 11;
             this.panel2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(257, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cboSheet
             // 
@@ -592,16 +615,16 @@
             // 
             // etudiant_stat
             // 
-            chartArea3.Name = "ChartArea1";
-            this.etudiant_stat.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend11";
-            this.etudiant_stat.Legends.Add(legend3);
+            chartArea7.Name = "ChartArea1";
+            this.etudiant_stat.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend11";
+            this.etudiant_stat.Legends.Add(legend7);
             this.etudiant_stat.Location = new System.Drawing.Point(40, 63);
             this.etudiant_stat.Name = "etudiant_stat";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend11";
-            series3.Name = "NombreEtudiants";
-            this.etudiant_stat.Series.Add(series3);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend11";
+            series7.Name = "NombreEtudiants";
+            this.etudiant_stat.Series.Add(series7);
             this.etudiant_stat.Size = new System.Drawing.Size(617, 300);
             this.etudiant_stat.TabIndex = 0;
             this.etudiant_stat.Text = "chart1";
@@ -609,6 +632,7 @@
             // tabPage4
             // 
             this.tabPage4.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.tabPage4.Controls.Add(this.reportViewer1);
             this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Controls.Add(this.panel3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -618,25 +642,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reporting";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // AfficherTous
-            // 
-            this.AfficherTous.Location = new System.Drawing.Point(56, 57);
-            this.AfficherTous.Name = "AfficherTous";
-            this.AfficherTous.Size = new System.Drawing.Size(75, 23);
-            this.AfficherTous.TabIndex = 0;
-            this.AfficherTous.Text = "Afficher";
-            this.AfficherTous.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.AfficherTous);
-            this.panel3.Location = new System.Drawing.Point(47, 33);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 100);
-            this.panel3.TabIndex = 1;
             // 
             // panel4
             // 
@@ -649,24 +654,12 @@
             this.panel4.Size = new System.Drawing.Size(240, 100);
             this.panel4.TabIndex = 2;
             // 
-            // AfficherCne
+            // CneTextBox
             // 
-            this.AfficherCne.Location = new System.Drawing.Point(89, 57);
-            this.AfficherCne.Name = "AfficherCne";
-            this.AfficherCne.Size = new System.Drawing.Size(75, 23);
-            this.AfficherCne.TabIndex = 0;
-            this.AfficherCne.Text = "Afficher";
-            this.AfficherCne.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 16);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Tous Les étudiants";
+            this.CneTextBox.Location = new System.Drawing.Point(129, 17);
+            this.CneTextBox.Name = "CneTextBox";
+            this.CneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CneTextBox.TabIndex = 3;
             // 
             // label13
             // 
@@ -678,34 +671,53 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "Saisir un CNE :";
             // 
-            // CneTextBox
+            // AfficherCne
             // 
-            this.CneTextBox.Location = new System.Drawing.Point(129, 17);
-            this.CneTextBox.Name = "CneTextBox";
-            this.CneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CneTextBox.TabIndex = 3;
+            this.AfficherCne.Location = new System.Drawing.Point(89, 57);
+            this.AfficherCne.Name = "AfficherCne";
+            this.AfficherCne.Size = new System.Drawing.Size(75, 23);
+            this.AfficherCne.TabIndex = 0;
+            this.AfficherCne.Text = "Afficher";
+            this.AfficherCne.UseVisualStyleBackColor = true;
+            this.AfficherCne.Click += new System.EventHandler(this.AfficherCne_Click);
             // 
-            // button1
+            // panel3
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(257, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.AfficherTous);
+            this.panel3.Location = new System.Drawing.Point(47, 33);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 1;
             // 
-            // button2
+            // label12
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(186, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(30, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(139, 16);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Tous Les étudiants";
+            // 
+            // AfficherTous
+            // 
+            this.AfficherTous.Location = new System.Drawing.Point(56, 57);
+            this.AfficherTous.Name = "AfficherTous";
+            this.AfficherTous.Size = new System.Drawing.Size(75, 23);
+            this.AfficherTous.TabIndex = 0;
+            this.AfficherTous.Text = "Afficher";
+            this.AfficherTous.UseVisualStyleBackColor = true;
+            this.AfficherTous.Click += new System.EventHandler(this.AfficherTous_Click);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(6, 155);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(665, 221);
+            this.reportViewer1.TabIndex = 3;
             // 
             // Form1
             // 
@@ -734,10 +746,10 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.etudiant_stat)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -803,6 +815,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button AfficherTous;
         private System.Windows.Forms.Button button2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
 

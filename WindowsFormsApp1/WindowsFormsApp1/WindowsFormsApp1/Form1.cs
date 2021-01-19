@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using ExcelDataReader;
 using System.IO;
 using Z.Dapper.Plus;
+using Microsoft.Reporting.WinForms;
 
 namespace WindowsFormsApp1
 {
@@ -35,6 +36,8 @@ namespace WindowsFormsApp1
             affiche_filiere();
             charger_filiere();
             charger_diagram();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
 
         /*------------------------------------------- espace  Filiere ---------------------------------------------*/
@@ -464,6 +467,43 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
+        }
+
+        private void AfficherTous_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-MUMHPSL\\SQLEXPRESS;Initial Catalog=student_management;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM etudiant", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            ReportDataSource rds = new ReportDataSource("DataSet1", dt);
+
+            reportViewer1.LocalReport.ReportPath = @"C:\Users\PC\Desktop\gestion-des-etudiants\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\UsersInfoRPT.rdlc";
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(rds);
+            reportViewer1.Refresh();
+        }
+
+        private void AfficherCne_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-MUMHPSL\\SQLEXPRESS;Initial Catalog=student_management;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM etudiant WHERE cne=@cne", con);
+            cmd.Parameters.AddWithValue("@cne", CneTextBox.Text);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            ReportDataSource rds = new ReportDataSource("DataSet1", dt);
+
+            reportViewer1.LocalReport.ReportPath = @"C:\Users\PC\Desktop\gestion-des-etudiants\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\UserInfoRPT.rdlc";
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(rds);
+            reportViewer1.Refresh();
         }
     }
 }
